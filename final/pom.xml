@@ -10,7 +10,6 @@
     
 <!-- [START set_versions] -->
     <properties>
-        <appengine.app.version>1</appengine.app.version>
         <appengine.mvn.version>1.0.0</appengine.mvn.version>
         <appengine.sdk.version>1.9.42</appengine.sdk.version>
 
@@ -105,14 +104,6 @@
                 <version>2.6</version>
                 <configuration>
                     <archiveClasses>true</archiveClasses>
-                    <webResources>
-                        <!-- in order to interpolate version from pom into appengine-web.xml -->
-                        <resource>
-                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-                        </resource>
-                    </webResources>
                 </configuration>
             </plugin>
 

@@ -1,6 +1,6 @@
 ## appengine-java-guestbook-multiphase
 
-Goes through the process of creating an App Engine guestbook using Java and Maven in phases.
+Goes through the process of creating an App Engine guestbook using Java and Maven or Gradle in phases.
 
 1. phase1 -- UI Only
 2. final -- Adds data access using [Objectify](https://github.com/objectify/objectify)
@@ -14,7 +14,7 @@ Please ask questions on [Stackoverflow](http://stackoverflow.com/questions/tagge
 How do I, as a developer, start working on the project?
 
 1. cd final  (or phase1)
-1. `mvn clean appengine:run`
+1. `mvn clean appengine:run` OR `./gradlew appengineRun`
 
 <!---
 1. What dependencies does it have (where are they expressed) and how do I install them?
@@ -33,7 +33,7 @@ How do I run the project's automated tests?
 
 1. Create a project in [Google Cloud Console](https://cloud.google.com/console)
 1. edit ...**/webapp/WEB-INFappengine.web.xml** and change **your-app-id**
-1. `mvn clean appengine:deploy`
+1. `mvn clean appengine:deploy` OR `./gradlew appengineDeploy`
 
 <!--- 
 ## Troubleshooting & useful tools
