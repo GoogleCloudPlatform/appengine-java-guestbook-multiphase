@@ -14,7 +14,7 @@ Please ask questions on [Stackoverflow](http://stackoverflow.com/questions/tagge
 How do I, as a developer, start working on the project?
 
 1. cd final  (or phase1)
-1. `mvn clean appengine:devserver`
+1. `mvn clean appengine:run`
 
 <!---
 1. What dependencies does it have (where are they expressed) and how do I install them?
@@ -33,7 +33,7 @@ How do I run the project's automated tests?
 
 1. Create a project in [Google Cloud Console](https://cloud.google.com/console)
 1. edit ...**/webapp/WEB-INFappengine.web.xml** and change **your-app-id**
-1. `mvn clean appengine:update`
+1. `mvn clean appengine:deploy`
 
 <!--- 
 ## Troubleshooting & useful tools
