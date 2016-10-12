@@ -35,27 +35,28 @@ repositories {   // repositories for JARs you access in your code
   mavenCentral()
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
 apply plugin: 'java'                              // standard Java tasks 
 apply plugin: 'war'                               // standard Web Archive plugin
 apply plugin: 'com.google.cloud.tools.appengine'  // App Engine tasks
 
+def appengineSdkVersion = '1.9.42'
+
 dependencies {
-  providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-  compile 'com.google.appengine:appengine-api-1.0-sdk:+'
+  providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+  compile group: 'com.google.appengine', name: 'appengine-api-1.0-sdk', version: appengineSdkVersion
   compile group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version: '1.2'
 
-  testCompile 'com.google.appengine:appengine-testing:+'
-  testCompile 'com.google.appengine:appengine-api-stubs:+'
+  testCompile group: 'com.google.appengine', name: 'appengine-testing', version: appengineSdkVersion
+  testCompile group: 'com.google.appengine', name: 'appengine-api-stubs', version: appengineSdkVersion
 }
 
 appengine {  // App Engine tasks configuration
   run {      // local (dev_appserver) configuration (standard environments only)
     port = 8080                 // default
-  }
-
-  deploy {   // deploy configuration
-    stopPreviousVersion = true  // default - stop the current version
-    promote = true              // default - & make this the current version
   }
 }
 
